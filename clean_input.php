@@ -5,13 +5,13 @@
 // pcq j'ai grave la flemme de faire autrement, et de toute façon y'a qu'à pas coder comme un porc (...) et ça passera !
 
 function clean_input($var){
-	if (filter_input(INPUT_POST, $var) != NULL){
+  if (filter_input(INPUT_POST, $var) != NULL){
 		return filter_input(INPUT_POST, $var, FILTER_SANITIZE_STRING);
 	}
-	else 	if (filter_input(INPUT_GET, $var) != NULL){
+  else 	if (filter_input(INPUT_GET, $var) != NULL){
 		return filter_input(INPUT_GET, $var, FILTER_SANITIZE_STRING);
 	}
-	else 	if (filter_input(INPUT_REQUEST, $var) != NULL){
+  else 	if (filter_input(INPUT_REQUEST, $var) != NULL){
 		return filter_input(INPUT_REQUEST, $var, FILTER_SANITIZE_STRING);
 	}
   else 	if (filter_input(INPUT_SESSION, $var) != NULL){
@@ -29,10 +29,10 @@ function clean_input($var){
   else 	if (filter_input(INPUT_FILES, $var) != NULL){
 		return filter_input(INPUT_FILES, $var, FILTER_SANITIZE_STRING);
 	}
-  	lse 	if (filter_input(INPUT_ENV, $var) != NULL){
-		return filter_input(INPUT_ENV, $var, FILTER_SANITIZE_STRING);
+  else 	if (filter_input(INPUT_ENV, $var) != NULL){
+	return filter_input(INPUT_ENV, $var, FILTER_SANITIZE_STRING);
 	}
-	else{
-		return NULL;
+  else{
+	return NULL;
 	}
 }
